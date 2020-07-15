@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+  <title>{{ page_title }}</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="description" content="{{ page_description | escape }}">
+  <link rel="canonical" href="{{ canonical_url }}">
+  <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+  {{ content_for_header }} <!-- Header hook for plugins -->
+  {{ 'application.scss.css' | asset_url | stylesheet_tag }}
+  {{ 'application.js' | asset_url | script_tag }}
+  <script src="https://kit.fontawesome.com/3b99149a02.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  {% if page.title == nil %}
+    {% for link in linklists.main-menu.links %}
+      {% assign child_list_handle = link.title | handleize %}
+      {% if linklists[child_list_handle].links != blank %}
+        <a href="{{ link.url }}">{{ link.title }}</a>
+        [{% for childlink in linklists[child_list_handle].links %}
+          <a href="{{ childlink.url }}">{{ childlink.title | escape }}</a>
+        {% endfor %}]
+      {% else %}
+        <a href="{{ link.url }}">{{ link.title }}</a>
+      {% endif %}
+    {% endfor %}
+
+    <a href="/cart">cart</a>
+
+    {% if shop.customer_accounts_enabled %}
+      {% if customer %}
+        <a href="/account">account</a>
+        {{ 'log out'  | customer_logout_link }}
+      {% else %}
+        {{ 'log in ' | customer_login_link }}
+        {{ 'register' | customer_register_link }}
+      {% endif %}
+    {% endif %}
+
+    <main role="main">
+      {{ content_for_layout }}
+    </main>
+  {% endif %}
+  
+  {% if page.title != nil %}
+    <main role="main">
+      {% assign names = "fab fa-facebook,fab fa-instagram,fab fa-patreon" | split: ","  %}
+      <div class="landing-container">
+        <img class="landing-logo" src="{{ 'logo.svg' | asset_url }}" alt="logo">
+        <div class="hero-section"> 
+          <p> ART BY MIKHAIL SK </p>
+          <a href="" class="button">  ENTER </a>
+        </div>
+        <div class="social-media"> 
+          <ul>
+            {% for name in names %}
+              <li> 
+                <a href=""> <i class="{{ name }}"> </i></a> 
+              </li>
+            {% endfor %}
+          </ul>
+        </div>  
+      </div>
+    </main>
+  {% endif %}
+</body>
+</html>

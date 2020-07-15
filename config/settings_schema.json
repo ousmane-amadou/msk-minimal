@@ -1,0 +1,25 @@
+[
+  {
+    "name": "MSK Brand Store",
+    "theme_name": "MSK Minimal",
+    "theme_version": "1.0.0",
+    "theme_author": "Shopify",
+    "theme_documentation_url": "https:\/\/github.com\/Shopify\/themekit",
+    "theme_support_url": "https:\/\/github.com\/Shopify\/themekit\/issues"
+  },
+  {
+    "name": "Typography",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Hero Text"
+      },
+      {
+        "type": "font_picker",
+        "id": "hero-text-font",
+        "label": "Font",
+        "default": "futura_n5"
+      }
+    ]
+  }
+]
