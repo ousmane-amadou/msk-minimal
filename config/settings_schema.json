@@ -1,24 +1,32 @@
 [
   {
-    "name": "MSK Brand Store",
+    "name": "theme_info",
     "theme_name": "MSK Minimal",
     "theme_version": "1.0.0",
-    "theme_author": "Shopify",
-    "theme_documentation_url": "https:\/\/github.com\/Shopify\/themekit",
-    "theme_support_url": "https:\/\/github.com\/Shopify\/themekit\/issues"
+    "theme_author": "Ousmane Amadou",
+    "theme_documentation_url": "https:\/\/github.com\/ousmane-amadou\/msk-minimal",
+    "theme_support_url": "https:\/\/github.com\/ousmane-amadou\/msk-minimal"
   },
   {
     "name": "Typography",
     "settings": [
       {
         "type": "header",
-        "content": "Hero Text"
+        "content": "Header Font"
       },
       {
         "type": "font_picker",
         "id": "hero-text-font",
         "label": "Font",
         "default": "futura_n5"
+      },
+      {
+        "type": "text",
+        "id": "hero-text",
+        "label": "Hero Text",
+        "default": "ART BY MIKHAIL SK",
+        "info": "Nothing Much",
+        "placeholder": "Enter Text"
       }
     ]
   }
