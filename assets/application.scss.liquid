@@ -1,6 +1,8 @@
 // Landing Page
-{% assign header_font = settings.hero-text-font %}
-@mixin center($axis: "both"){
+
+$header-font: {{ settings.hero-text-font.family }};
+
+@mixin center($axis: "both") {
     position: absolute;
     @if $axis == "y"{
         top:50%;
@@ -29,15 +31,58 @@
     }   
 }
 
-{% if page.title == nil %}
+// html, body, main {
+//     height: 100%;
+// }
+
+// body {
+//     background: rgba($color: black, $alpha: 0.25);   
+// }
+
 html, body, main {
     height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 body {
     background: rgba($color: black, $alpha: 0.25);   
 }
-{% endif %}
+
+header {
+    background-color: pink;
+    height: 50px;
+    padding: 0.5em;
+
+    .brand-logo {
+        display: inline;
+        
+        img {
+            height: 100%;
+        }
+    }
+
+    nav {
+        display: inline;
+        float: right;
+        height: 100%;
+        
+        ul {
+            height: 100%;
+            list-style: none;
+            
+            li {
+                display: inline;
+                padding-left: 30px;
+            }
+
+            li a {
+                text-decoration: none;
+            }
+        }
+    } 
+    
+}
 
 .landing-container {
     height: inherit;
@@ -53,9 +98,9 @@ body {
     .hero-section {
         @include center("both");
         margin: -40px -2px;
-        font-family: {{ header_font.family }};
-        font-weight: {{ header_font.weight }};
-        font-style: {{ header_font.style }};
+        font-family: $header-font;
+        font-weight: {{ settings.hero-text-font.weight }};
+        font-style: {{ settings.hero-text-font.style }};
         
         color: white;
         
