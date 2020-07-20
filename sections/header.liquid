@@ -1,15 +1,18 @@
 <header>
     <a class="brand-logo" href="/"> <img src="{{ 'logo.svg' | asset_url }}" alt="logo"> </a>
-    <nav>
+    <button class="menu">
+        <i> <img src="{{ 'menu.svg' | asset_url }}" alt="menu"></i>
+    </button>
+    <nav class="main-menu">
         <ul>
             {% for link in linklists.main-menu.links %}
-            <li> <a href="{{ link.url }}">{{ link.title | escape }} </a> </li>
+            <li><a href="{{ link.url }}">{{ link.title | escape }}</a></li>
             {% endfor %}
             <li><a> Search </a></li>
             <li><a href="/cart"> Cart </a></li>
         </ul>
         
-    </nav>
+    </nav> 
 </header>
 
 <!-- 

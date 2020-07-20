@@ -16,8 +16,11 @@
   {% if page.title == nil %}
     {% section 'header' %}
     <main role="main">
-      {{ content_for_layout }}
+      {% section 'home-menu-item' %}
+      {% section 'home-menu-item' %}
+      {% section 'home-menu-item' %}
     </main>
+    {{ content_for_layout }}
   {% endif %}
   
   {% if page.title != nil %}

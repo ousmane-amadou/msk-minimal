@@ -1,6 +1,8 @@
 // Landing Page
 
-$header-font: {{ settings.hero-text-font.family }};
+$header-font-family: {{ settings.hero-text-font.family }};
+$header-font-weight: {{ settings.hero-text-font.weight }};
+$header-font-style: {{ settings.hero-text-font.style }};
 
 @mixin center($axis: "both") {
     position: absolute;
@@ -55,16 +57,53 @@ header {
     padding: 0.5em;
 
     .brand-logo {
-        display: inline;
-        
         img {
             height: 100%;
         }
     }
+    .menu {
+        display: none;
+    }
+    
+    @media screen and (max-width: 700px) {
+        .brand-logo {
+            img {
+                margin-left: 200px;
+            }
+        }
+
+        .menu {
+            display: inline;
+            float: left;
+
+            img {
+                height: 40px;
+                width: 40px;
+            }
+        }
+
+        nav {
+            a {
+                display: inline;
+                
+                img {
+                    text-align: center;
+                }
+            }
+
+            li:not(.menu) {
+                display: none; 
+            }
+        }
+    }
+
+    
+
 
     nav {
         display: inline;
         float: right;
+        overflow: hidden;
         height: 100%;
         
         ul {
@@ -77,11 +116,38 @@ header {
             }
 
             li a {
+
+                display: inline;
                 text-decoration: none;
+                
+                img {
+                    height: 100%;
+                }
             }
         }
     } 
-    
+}
+
+main {
+    margin: 0;
+    padding: 0;
+    flex-direction: column;
+
+    .home-item {
+        align-items: center;
+        background-color: orange;
+        display: flex;
+        height: 30vw;
+        justify-content: center;
+        margin: auto;
+        width: 100%;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+
+    .home-item:hover {
+        background-color: blue;
+    }
 }
 
 .landing-container {
@@ -98,9 +164,9 @@ header {
     .hero-section {
         @include center("both");
         margin: -40px -2px;
-        font-family: $header-font;
-        font-weight: {{ settings.hero-text-font.weight }};
-        font-style: {{ settings.hero-text-font.style }};
+        font-family: $header-font-family;
+        font-weight: $header-font-weight; 
+        font-style:  $header-font-style;
         
         color: white;
         
@@ -135,7 +201,6 @@ header {
 
             li {
                 display: inline;
-
             }
 
             i.fab {
@@ -144,7 +209,6 @@ header {
                  color: white;
             }
         }
-        
     }
 }
 
