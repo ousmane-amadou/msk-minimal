@@ -1,5 +1,15 @@
+// html, body, main {
+//     height: 100%;
+// }
+
+// body {
+//     background: rgba($color: black, $alpha: 0.25);   
+// }
+
 html, body, main {
     height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 body {
@@ -19,6 +29,7 @@ main {
         justify-content: center;
         margin: auto;
         width: 100%;
+        max-width: 100%;
         text-decoration: none;
         text-transform: uppercase;
     }
@@ -28,72 +39,56 @@ main {
     }
 }
 
-// // html, body, main {
-// //     height: 100%;
-// //     margin: 0;
-// //     padding: 0;
-// // }
-
-// body {
-//     background: rgba($color: black, $alpha: 0.25);   
-// }
-
 header {
     background-color: pink;
     height: 50px;
     padding: 0.5em;
 
+    
     .brand-logo {
         img {
             height: 100%;
         }
     }
-    .menu {
+    
+    .menu-icon {
+        display: none;
+    }
+
+    .side-nav {
         display: none;
     }
     
-    @media screen and (max-width: 700px) {
+    @media screen and (max-width: 720px) {
         .brand-logo {
             img {
                 display: block;
+                position: relative;
+                right: 20px;
                 margin-left: auto;
                 margin-right: auto;
             }
         }
 
-        .menu {
+        .menu-icon {
             display: block;
-            position: absolute;
-            top: 10px;
-            left: 10px;
-
-            img {
-                height: 40px;
-                width: 40px;
-            }
+            float: left;
+            margin-top: -1px;
+            margin-left: 10px;
+            font-size: 50px;
         }
 
-        nav {
-            a {
-                display: inline;
-                
-                img {
-                    text-align: center;
-                }
-            }
-
-            li:not(.menu) {
-                display: none; 
-            }
+        .top-nav {
+            display: none;
         }
+
     }
 
     nav {
-        display: inline;
+        display: block;
         float: right;
         overflow: hidden;
-        height: 100%;
-        
+    
         ul {
             height: 100%;
             list-style: none;

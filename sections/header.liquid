@@ -1,9 +1,27 @@
 <header>
-    <a class="brand-logo" href="/"> <img src="{{ 'logo.svg' | asset_url }}" alt="logo"> </a>
-    <button class="menu">
-        <img src="{{ 'menu.svg' | asset_url }}" alt="menu">
-    </button>
-    <nav class="main-menu">
+    <!-- HAMBURGER MENU ICON -->
+    <a href="/" class="menu-icon">
+        <i class="fa fa-bars"></i>
+    </a>
+
+    <!-- LOGO -->
+    <a class="brand-logo" href="/"> 
+        <img src="{{ 'logo.svg' | asset_url }}" alt="logo"> 
+    </a>
+
+    <!-- TOP NAVIGTION (LAPTOPS) -->
+    <nav class="top-nav">
+        <ul>
+            {% for link in linklists.main-menu.links %}
+            <li><a href="{{ link.url }}">{{ link.title | escape }}</a></li>
+            {% endfor %}
+            <li><a> Search </a></li>
+            <li><a href="/cart"> Cart </a></li>
+        </ul>
+    </nav> 
+
+    <!-- SIDE DRAWER (PHONES/SMALL DEVIces) -->
+    <nav class="side-nav">
         <ul>
             {% for link in linklists.main-menu.links %}
             <li><a href="{{ link.url }}">{{ link.title | escape }}</a></li>
