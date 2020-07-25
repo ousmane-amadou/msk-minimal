@@ -1,55 +1,42 @@
-// Landing Page
-
-$header-font-family: {{ settings.hero-text-font.family }};
-$header-font-weight: {{ settings.hero-text-font.weight }};
-$header-font-style: {{ settings.hero-text-font.style }};
-
-@mixin center($axis: "both") {
-    position: absolute;
-    @if $axis == "y"{
-        top:50%;
-        -webkit-transform: translateY(-50%);
-        -moz-transform: translateY(-50%);
-        -ms-transform: translateY(-50%);
-        -o-transform: translateY(-50%);
-        transform: translateY(-50%);
-    }
-    @if $axis == "x"{
-        left:50%;
-        -webkit-transform: translateX(-50%);
-        -moz-transform: translateX(-50%);
-        -ms-transform: translateX(-50%);
-        -o-transform: translateX(-50%);
-        transform: translateX(-50%);
-    }
-    @if $axis == "both"{
-        top:50%;
-        left:50%;
-        -webkit-transform: translate(-50%, -50%);
-        -moz-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-        -o-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%);
-    }   
-}
-
-// html, body, main {
-//     height: 100%;
-// }
-
-// body {
-//     background: rgba($color: black, $alpha: 0.25);   
-// }
-
 html, body, main {
     height: 100%;
-    margin: 0;
-    padding: 0;
 }
 
 body {
     background: rgba($color: black, $alpha: 0.25);   
 }
+
+main {
+    margin: 0;
+    padding: 0;
+    flex-direction: column;
+
+    .home-item {
+        align-items: center;
+        background-color: orange;
+        display: flex;
+        height: 30vw;
+        justify-content: center;
+        margin: auto;
+        width: 100%;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+
+    .home-item:hover {
+        background-color: blue;
+    }
+}
+
+// // html, body, main {
+// //     height: 100%;
+// //     margin: 0;
+// //     padding: 0;
+// // }
+
+// body {
+//     background: rgba($color: black, $alpha: 0.25);   
+// }
 
 header {
     background-color: pink;
@@ -68,13 +55,17 @@ header {
     @media screen and (max-width: 700px) {
         .brand-logo {
             img {
-                margin-left: 200px;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
             }
         }
 
         .menu {
-            display: inline;
-            float: left;
+            display: block;
+            position: absolute;
+            top: 10px;
+            left: 10px;
 
             img {
                 height: 40px;
@@ -96,9 +87,6 @@ header {
             }
         }
     }
-
-    
-
 
     nav {
         display: inline;
@@ -128,89 +116,7 @@ header {
     } 
 }
 
-main {
-    margin: 0;
-    padding: 0;
-    flex-direction: column;
 
-    .home-item {
-        align-items: center;
-        background-color: orange;
-        display: flex;
-        height: 30vw;
-        justify-content: center;
-        margin: auto;
-        width: 100%;
-        text-decoration: none;
-        text-transform: uppercase;
-    }
-
-    .home-item:hover {
-        background-color: blue;
-    }
-}
-
-.landing-container {
-    height: inherit;
-    position: relative;
-    margin: 1vh 1vw;
-    text-align: center;
-
-    .landing-logo {
-        height: 83px;
-        margin-top: 3vh;
-    }
-
-    .hero-section {
-        @include center("both");
-        margin: -40px -2px;
-        font-family: $header-font-family;
-        font-weight: $header-font-weight; 
-        font-style:  $header-font-style;
-        
-        color: white;
-        
-        p {
-            font-size: 22px !important;
-            letter-spacing: .6em;
-            margin-bottom: 30px;
-        }
-
-        .button {
-            font-size: 12px !important;
-            line-height: 1em;
-            letter-spacing: .2em;
-            background-color: transparent;
-            text-align: center;
-            color: white;
-            text-decoration: none;
-            border: 2px solid white; 
-            padding: 1em 1.44em 1em 1.44em;
-        }
-    }
-    
-    .social-media {
-        @include center("x");
-        font-size: 24px;
-        bottom: 10%;
-        
-        ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-
-            li {
-                display: inline;
-            }
-
-            i.fab {
-                 background: transparent;
-                 margin: 0px 5px;
-                 color: white;
-            }
-        }
-    }
-}
 
 
 

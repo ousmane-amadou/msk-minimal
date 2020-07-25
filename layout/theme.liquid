@@ -7,13 +7,26 @@
   <meta name="description" content="{{ page_description | escape }}">
   <link rel="canonical" href="{{ canonical_url }}">
   <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+
+  <style>
+    :root {
+      --header-font-family: {{ settings.hero-text-font.family }};
+      --header-font-weight: {{ settings.hero-text-font.weight }};
+      --header-font-style: {{ settings.hero-text-font.style }};
+    }
+  </style>
+  
   {{ content_for_header }} <!-- Header hook for plugins -->
   {{ 'application.scss.css' | asset_url | stylesheet_tag }}
+  {{ 'landing.scss.css' | asset_url | stylesheet_tag }}
   {{ 'application.js' | asset_url | script_tag }}
+
+  
   <script src="https://kit.fontawesome.com/3b99149a02.js" crossorigin="anonymous"></script>
+  
 </head>
 <body>
-  {% if page.title == nil %}
+  {% if page.title != nil %}
     {% section 'header' %}
     <main role="main">
       {% section 'home-menu-item' %}
@@ -23,7 +36,7 @@
     {{ content_for_layout }}
   {% endif %}
   
-  {% if page.title != nil %}
+  {% if page.title == nil %}
     <main role="main">
       {% assign names = "fab fa-facebook,fab fa-instagram,fab fa-patreon" | split: ","  %}
       <div class="landing-container">
