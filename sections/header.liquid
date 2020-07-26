@@ -15,12 +15,12 @@
             {% for link in linklists.main-menu.links %}
             <li><a href="{{ link.url }}">{{ link.title | escape }}</a></li>
             {% endfor %}
-            <li><a> Search </a></li>
-            <li><a href="/cart"> Cart </a></li>
+            <li><a href="/cart"><i class="fas fa-search"></i></a></li>
+            <li><a href="/cart"> <i class="fas fa-shopping-cart"></i> </a></li>
         </ul>
     </nav> 
 
-    <!-- SIDE DRAWER (PHONES/SMALL DEVIces) -->
+    <!-- SIDE DRAWER (PHONES/SMALL DEVICES) -->
     <nav class="side-nav">
         <ul>
             {% for link in linklists.main-menu.links %}
