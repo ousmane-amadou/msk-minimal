@@ -53,7 +53,7 @@ header {
         }
     }
     
-    .menu-icon {
+    .top-nav li .menu-icon {
         display: none;
     }
 
@@ -62,34 +62,16 @@ header {
     }
     
     @media screen and (max-width: 720px) {
-        .brand-logo {
-            img {
-                display: block;
-                position: relative;
-                right: 20px;
-                margin-left: auto;
-                margin-right: auto;
-            }
+        .top-nav li .menu-icon {
+            display: inline;
         }
-
-        .menu-icon {
-            display: block;
-            float: left;
-            margin-top: -1px;
-            margin-left: 10px;
-            font-size: 50px;
-        }
-
-        .top-nav {
+    
+        .top-nav li:not(.icon-persist){
             display: none;
-        }
-
-        .side-nav {
-            display: block;
         }
     }
 
-    nav {
+    .top-nav {
         display: block;
         float: right;
         overflow: hidden;
@@ -104,7 +86,6 @@ header {
             }
 
             li a {
-
                 display: inline;
                 text-decoration: none;
                 

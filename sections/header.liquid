@@ -1,9 +1,4 @@
 <header>
-    <!-- HAMBURGER MENU ICON -->
-    <a href="/" class="menu-icon">
-        <i class="fa fa-bars"></i>
-    </a>
-
     <!-- LOGO -->
     <a class="brand-logo" href="/"> 
         <img src="{{ 'logo.svg' | asset_url }}" alt="logo"> 
@@ -15,11 +10,13 @@
             {% for link in linklists.main-menu.links %}
             <li><a href="{{ link.url }}">{{ link.title | escape }}</a></li>
             {% endfor %}
-            <li><a href="/cart"><i class="fas fa-search"></i></a></li>
-            <li><a href="/cart"> <i class="fas fa-shopping-cart"></i> </a></li>
+            <li class="icon-persist"><a href="/cart"><i class="fas fa-search"></i></a></li>
+            <li class="icon-persist"><a href="/cart"> <i class="fas fa-shopping-cart"></i></a></li>
+            <!-- HAMBURGER MENU ICON -->
+            <li class="icon-persist menu-icon"> <a href="/" class="menu-icon"> <i class="fa fa-bars"></i></a></li>
         </ul>
-    </nav> 
-
+    </nav>
+    
     <!-- SIDE DRAWER (PHONES/SMALL DEVICES) -->
     <nav class="side-nav">
         <ul>
