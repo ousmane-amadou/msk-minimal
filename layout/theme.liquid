@@ -17,45 +17,16 @@
   </style>
 
   {{ content_for_header }} <!-- Header hook for plugins -->
-  {{ 'application.scss.css' | asset_url | stylesheet_tag }}
   {{ 'landing.scss.css' | asset_url | stylesheet_tag }}
+
+  {{ 'application.scss.css' | asset_url | stylesheet_tag }}
   {{ 'application.js' | asset_url | script_tag }}
 
-  
   <script src="https://kit.fontawesome.com/3b99149a02.js" crossorigin="anonymous"></script>
-  
 </head>
 <body>
-  {% if page.title == nil %}
-    {% section 'header' %}
-    <main role="main">
-      {% section 'home-menu-item' %}
-      {% section 'home-menu-item' %}
-      {% section 'home-menu-item' %}
-    </main>
+  <main role="main">
     {{ content_for_layout }}
-  {% endif %}
-  
-  {% if page.title != nil %}
-    <main role="main">
-      {% assign names = "fab fa-facebook,fab fa-instagram,fab fa-patreon" | split: ","  %}
-      <div class="landing-container">
-        <img class="landing-logo" src="{{ 'logo.svg' | asset_url }}" alt="logo">
-        <div class="hero-section"> 
-          <p>  {{ settings.hero-text }} </p>
-          <a href="" class="button">  ENTER </a>
-        </div>
-        <div class="social-media"> 
-          <ul>
-            {% for name in names %}
-              <li> 
-                <a href=""> <i class="{{ name }}"> </i></a> 
-              </li>
-            {% endfor %}
-          </ul>
-        </div>  
-      </div>
-    </main>
-  {% endif %}
+  </main>
 </body>
 </html>
