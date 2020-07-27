@@ -7,22 +7,25 @@
   <meta name="description" content="{{ page_description | escape }}">
   <link rel="canonical" href="{{ canonical_url }}">
   <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-
-  <style>
+  
+  <!-- STYLES -->
+  <style >
     :root {
       --header-font-family: {{ settings.hero-text-font.family }};
       --header-font-weight: {{ settings.hero-text-font.weight }};
       --header-font-style: {{ settings.hero-text-font.style }};
     }
   </style>
-
-  {{ content_for_header }} <!-- Header hook for plugins -->
+  {{ 'application.scss.css' | asset_url | stylesheet_tag }}
   {{ 'landing.scss.css' | asset_url | stylesheet_tag }}
 
-  {{ 'application.scss.css' | asset_url | stylesheet_tag }}
+  <!-- SCRIPTS -->
   {{ 'application.js' | asset_url | script_tag }}
 
   <script src="https://kit.fontawesome.com/3b99149a02.js" crossorigin="anonymous"></script>
+
+   <!-- HEADER HOOK FOR PLUGINS -->
+   {{ content_for_header }} 
 </head>
 <body>
   <main role="main">

@@ -7,20 +7,24 @@
     <!-- TOP NAVIGTION (LAPTOPS) -->
     <nav class="top-nav">
         <ul>
+            <!-- MAIN MENU ITEMS -->
+            <li class="menu-icon"> <a onclick="openDrawer()"> <i class="fa fa-bars"></i></a></li>
             {% for link in linklists.main-menu.links %}
-            <li><a href="{{ link.url }}">{{ link.title | escape }}</a></li>
+            <li class="main-menu-item"><a href="{{ link.url }}">{{ link.title | escape }}</a></li>
+            <!-- <li class="main-menu-item"><a href="{{ link.url }}"> C </a></li> -->
             {% endfor %}
-            <li class="icon-persist"><a href="/cart"><i class="fas fa-search"></i></a></li>
-            <li class="icon-persist"><a href="/cart"> <i class="fas fa-shopping-cart"></i></a></li>
-            <!-- HAMBURGER MENU ICON -->
-            <li class="icon-persist menu-icon"> <a onclick="openDrawer()"class="menu-icon"> <i class="fa fa-bars"></i></a></li>
+
+            <!-- SECONDARY MENU ITEMS -->
+            <li class="secondary-menu-item"> <a href="/search"><i class="fas fa-search"></i></a></li>
+            <li class="secondary-menu-item"><a href="/cart"> <i class="fas fa-shopping-cart"></i></a></li>
+            
         </ul>
     </nav>
     
     <!-- SIDE DRAWER (PHONES/SMALL DEVICES) -->
     <nav class="side-nav">
         <ul>
-            <i onclick="closeDrawer()" class="fas fa-times"></i>
+            <li> <i onclick="closeDrawer()" class="fas fa-times"></i> </li>
             {% for link in linklists.main-menu.links %}
             <li><a href="{{ link.url }}">{{ link.title | escape }}</a></li>
             {% endfor %}

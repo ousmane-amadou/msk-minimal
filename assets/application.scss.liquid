@@ -4,8 +4,92 @@ html, body, main {
     padding: 0;
 }
 
-body {
-    background: rgba($color: black, $alpha: 0.25);   
+$header-height: 50px;
+$h-header-padding: 16px;
+
+@mixin center($axis: "both") {
+    position: absolute;
+    @if $axis == "y"{
+        top:50%;
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+    @if $axis == "x"{
+        left:50%;
+        -webkit-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        -o-transform: translateX(-50%);
+        transform: translateX(-50%);
+    }
+    @if $axis == "both"{
+        top:50%;
+        left:50%;
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }   
+}
+
+header {
+    background-color: rgba(black, 0);
+    position: fixed;
+    top: 0;
+    height: #{$header-height};
+    padding: #{$h-header-padding} 2em;
+    width: calc(100% - 4em);
+    
+    .brand-logo {
+        img {
+            @include center("x");
+            height: #{$header-height};
+        }
+    }
+
+    .top-nav {
+        display: block;
+        overflow: hidden;
+
+        ul {
+            padding: 0;
+            height: 100%;
+            list-style: none;
+            
+            .menu-icon {
+                display: none;
+            }
+
+            li:not(.menu-icon) {
+                display: inline;
+
+                a {
+                    text-decoration: none;
+                }
+
+                img {
+                    height: 100%;
+                }
+            }
+
+            .main-menu-item {
+                margin-right: 25px;
+            }
+
+            .secondary-menu-item {
+                float: right;
+                margin-left: 25px;
+            }
+        }
+    } 
+
+    .side-nav {
+        display: none;
+    }
 }
 
 .inactive {
@@ -15,56 +99,48 @@ body {
 .home {
     margin: 0;
     padding: 0;
-    padding-top: calc(50px + 1.25em);
+    padding-top: calc(#{$header-height} +  2  * #{$h-header-padding});
     flex-direction: column;
 
-    .home-item {
+    .title {
+        font-size: 24px;
+        line-height: 2em;
+        letter-spacing: .3em;
+    }
+
+    .home-menu .home-menu-item {
         align-items: center;
-        background-color: orange;
         display: flex;
-        height: calc(50px + 30vw);
+        height: calc(#{$header-height} + 30vw);
         justify-content: center;
         margin: auto;
         width: 100%;
         max-width: 100%;
         text-decoration: none;
         text-transform: uppercase;
+
+        img {
+            height: calc(#{$header-height} + 30vw);
+            position: absolute;
+            z-index: -2;
+        }
     }
 
-    .home-item:hover {
-        background-color: blue;
+    .home-menu-item:hover {
+        background-color: rgba(white, 0.50);
     }
 }
 
-header {
-    background-color: rgba(black, 0);
-    position: fixed;
-    top: 0;
-    height: 50px;
-    width: calc(100% - 4em);
-    padding: 0.75em 2em;
-    
-    .brand-logo {
-        img {
-            height: 90%;
-        }
-    }
-    
-    .top-nav li .menu-icon {
-        display: none;
-    }
+@media screen and (max-width: 720px) {
+    header {
+        .top-nav ul {
+            .menu-icon {
+                display: inline;
+            }
 
-    .side-nav {
-        display: none;
-    }
-    
-    @media screen and (max-width: 720px) {
-        .top-nav li .menu-icon {
-            display: inline;
-        }
-    
-        .top-nav li:not(.icon-persist){
-            display: none;
+            li:not(.menu-icon):not(.secondary-menu-item) {
+                display: none;
+            }
         }
 
         /* Code from W3C Schools */
@@ -79,46 +155,16 @@ header {
             background-color: #111; /* Black*/
             overflow-x: hidden; /* Disable horizontal scroll */      
             transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
-        }
 
-        .side-nav ul  {
-            font-size: 24px;
-            color: white;
-            list-style: none;
-
-            li {
-                padding: 1em 0em;
-            }
-
-            a {
-                color: white;
-            }
-            
-        }
-    }
-
-    .top-nav {
-        display: block;
-        float: right;
-        overflow: hidden;
+            ul  {
+                font-size: 24px;
+                list-style: none;
     
-        ul {
-            height: 100%;
-            list-style: none;
-            
-            li {
-                display: inline;
-                margin: 10px;
-            }
-
-            li a {
-                display: inline;
-                text-decoration: none;
-                
-                img {
-                    height: 100%;
-                }
-            }
-        }
-    } 
+                li {
+                    height: $header-height;
+                    padding: 0.75em 2em;
+                } 
+            }  
+        }    
+    }
 }

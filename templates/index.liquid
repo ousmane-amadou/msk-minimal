@@ -1,13 +1,11 @@
-<div id="1" class="inactive">
+<div class="inactive">
   {% section 'header' %}
-  {% section 'home-menu-item' %}
-  {% section 'home-menu-item' %}
-  {% section 'home-menu-item' %}
+  {% section 'home-menu' %}
   {{ content_for_index }}
 </div>
 
-<div id="2" class="landing-container">
-  {% assign names = "fab fa-facebook,fab fa-instagram,fab fa-patreon" | split: ","  %}
+<div class="landing">
+  {% assign names = "fab fa-facebook,fab fa-instagram,fab fa-patreon" | split: "," %}
   <img class="landing-logo" src="{{ 'logo.svg' | asset_url }}" alt="logo">
   <div class="hero-section"> 
     <p>  {{ settings.hero-text }} </p>
