@@ -1,4 +1,4 @@
-<div class="home">
+<div id="1" class="inactive">
   {% section 'header' %}
   {% section 'home-menu-item' %}
   {% section 'home-menu-item' %}
@@ -6,12 +6,12 @@
   {{ content_for_index }}
 </div>
 
-<div class="landing-container">
+<div id="2" class="landing-container">
   {% assign names = "fab fa-facebook,fab fa-instagram,fab fa-patreon" | split: ","  %}
   <img class="landing-logo" src="{{ 'logo.svg' | asset_url }}" alt="logo">
   <div class="hero-section"> 
     <p>  {{ settings.hero-text }} </p>
-    <a href="" class="button">  ENTER </a>
+    <button onclick="call_to_action()"  class="button">  ENTER </button>
   </div>
   <div class="social-media"> 
     <ul>
