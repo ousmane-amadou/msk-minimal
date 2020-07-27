@@ -11,7 +11,6 @@
             <li class="menu-icon"> <a onclick="openDrawer()"> <i class="fa fa-bars"></i></a></li>
             {% for link in linklists.main-menu.links %}
             <li class="main-menu-item"><a href="{{ link.url }}">{{ link.title | escape }}</a></li>
-            <!-- <li class="main-menu-item"><a href="{{ link.url }}"> C </a></li> -->
             {% endfor %}
 
             <!-- SECONDARY MENU ITEMS -->
@@ -23,8 +22,8 @@
     
     <!-- SIDE DRAWER (PHONES/SMALL DEVICES) -->
     <nav class="side-nav">
+        <i onclick="closeDrawer()" class="fas fa-times"></i>
         <ul>
-            <li> <i onclick="closeDrawer()" class="fas fa-times"></i> </li>
             {% for link in linklists.main-menu.links %}
             <li><a href="{{ link.url }}">{{ link.title | escape }}</a></li>
             {% endfor %}

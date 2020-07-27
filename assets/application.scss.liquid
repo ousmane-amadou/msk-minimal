@@ -1,9 +1,3 @@
-html, body, main {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-}
-
 $header-height: 50px;
 $h-header-padding: 16px;
 
@@ -36,6 +30,17 @@ $h-header-padding: 16px;
     }   
 }
 
+.inactive {
+    display: none;
+}
+
+
+html, body, main {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 header {
     background-color: rgba(black, 0);
     position: fixed;
@@ -44,6 +49,10 @@ header {
     padding: #{$h-header-padding} 2em;
     width: calc(100% - 4em);
     
+    .side-nav {
+        display: none;
+    }
+
     .brand-logo {
         img {
             @include center("x");
@@ -85,15 +94,7 @@ header {
                 margin-left: 25px;
             }
         }
-    } 
-
-    .side-nav {
-        display: none;
-    }
-}
-
-.inactive {
-    display: none;
+    }     
 }
 
 .home {
@@ -108,7 +109,7 @@ header {
         letter-spacing: .3em;
     }
 
-    .home-menu .home-menu-item {
+    .home-menu-item {
         align-items: center;
         display: flex;
         height: calc(#{$header-height} + 30vw);
@@ -152,18 +153,44 @@ header {
             z-index: 1; /* Stay on top */
             top: 0; /* Stay at the top */
             left: 0;
-            background-color: #111; /* Black*/
+            background-color: white; /* Black*/
             overflow-x: hidden; /* Disable horizontal scroll */      
             transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
 
+            i {
+                position: absolute;
+                color: black;
+                font-size: 30px;
+                right: 25px;
+                top: 25px;
+            }
+
             ul  {
+                margin: 0px;
+                padding: 0px;
+                padding-top: calc(#{$header-height} +  2  * #{$h-header-padding});
+                
                 font-size: 24px;
                 list-style: none;
     
                 li {
-                    height: $header-height;
-                    padding: 0.75em 2em;
-                } 
+                    
+                    a {
+                        align-items: center;
+                        display: flex;
+                        justify-content: center;
+                        margin: auto;
+                        width: 100%;
+                        max-width: 100%;
+                        padding-top: 50px;
+                        padding-bottom: 50px;
+                        text-decoration: none;
+                        text-transform: uppercase;
+                    }
+                }
+                li:hover {
+                    background-color: black;
+                }
             }  
         }    
     }
