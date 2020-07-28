@@ -41,6 +41,32 @@ html, body, main {
     padding: 0;
 }
 
+.product-container {
+    padding-top: calc(#{$header-height} +  2  * #{$h-header-padding});
+    display: flex;
+    flex-wrap: wrap;
+
+    .item {
+        display: block;
+        padding-top: 50px;
+        width: 50%;
+    }
+
+    .gallery img {
+        margin-left: 20px;
+    }
+    
+    .cart-form {
+        * {
+            display: block;
+        }
+        
+        h1 {
+            margin: 0;
+        }
+    }
+}
+
 .collection-container {
     display: flex;
     flex-wrap: wrap;
