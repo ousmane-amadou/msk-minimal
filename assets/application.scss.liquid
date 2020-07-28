@@ -48,19 +48,25 @@ html, body, main {
 
     .item {
         display: block;
-        background-color: grey;
         min-width: 300px;
         width: 50%;
-        margin-bottom: -100px;
 
-        p {
+        .product-label {
             position: relative;
-            left: 50px;
-            bottom: 120px;
+            padding: 20px 0px;
+            
+            p {
+                display: inline;
+            }
         }
 
         img {
             width: 100%;
+            
+        }
+
+        img:hover {
+            opacity: 0.5;
         }
         
     }

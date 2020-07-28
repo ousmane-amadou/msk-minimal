@@ -4,10 +4,11 @@
     {% for product in collection.products %}
     <a href="{{ product.url | within: collection }}" class="item"> 
       <img src="{{ product.featured_image.src | img_url: 'large' }}" alt="{{ product.featured_image.alt | escape }}">
-      <p> {{ product.title }} </p>
-      <p> {{ product.price | money }} </p>
+      <div class="product-label">
+        <p> {{ product.title }} </p>
+        <p> {{ product.price | money }} </p>
+      </div>
     </a>
-   
     {% endfor %}
   {% endpaginate %}
 </div>
