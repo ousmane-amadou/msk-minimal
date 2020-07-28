@@ -1,4 +1,18 @@
-{% paginate collection.products by 2 %}
+{% section 'header' %}
+<div class="collection-container">
+  {% paginate collection.products by 6 %}
+    {% for product in collection.products %}
+    <a href="{{ product.url | within: collection }}" class="item"> 
+      <img src="{{ product.featured_image.src | img_url: 'large' }}" alt="{{ product.featured_image.alt | escape }}">
+      <p> {{ product.title }} </p>
+      <p> {{ product.price | money }} </p>
+    </a>
+   
+    {% endfor %}
+  {% endpaginate %}
+</div>
+
+<!-- {% paginate collection.products by 2 %}
   <h1>{{ collection.title }}</h1>
   {% for product in collection.products %}
     <div>
@@ -15,4 +29,4 @@
   {% if paginate.pages > 1 %}
     {{ paginate | default_pagination }}
   {% endif %}
-{% endpaginate %}
+{% endpaginate %} -->

@@ -41,6 +41,31 @@ html, body, main {
     padding: 0;
 }
 
+.collection-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: calc(#{$header-height} +  2  * #{$h-header-padding});
+
+    .item {
+        display: block;
+        background-color: grey;
+        min-width: 300px;
+        width: 50%;
+        margin-bottom: -100px;
+
+        p {
+            position: relative;
+            left: 50px;
+            bottom: 120px;
+        }
+
+        img {
+            width: 100%;
+        }
+        
+    }
+}
+
 header {
     background-color: rgba(black, 0);
     position: fixed;
@@ -173,7 +198,7 @@ header {
                 font-size: 24px;
                 list-style: none;
     
-                li {
+                li { 
                     a {
                         align-items: center;
                         display: flex;
