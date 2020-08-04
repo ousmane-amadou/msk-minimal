@@ -159,11 +159,13 @@ header {
     padding: 0;
     padding-top: calc(#{$header-height} +  2  * #{$h-header-padding});
     flex-direction: column;
+    overflow: hidden;
 
     .title {
         font-size: 24px;
         line-height: 2em;
         letter-spacing: .3em;
+        
     }
 
     .home-menu-item {
@@ -176,9 +178,11 @@ header {
         max-width: 100%;
         text-decoration: none;
         text-transform: uppercase;
+        overflow: hidden;
 
         img {
             height: calc(#{$header-height} + 30vw);
+            width: 100%;
             position: absolute;
             z-index: -2;
         }
