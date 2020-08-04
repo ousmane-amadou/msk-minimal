@@ -3,7 +3,7 @@
     <a class="home-menu-item" href ="{{ c.url }}">
         <p class="title"> {{ c.title }} </p>
         {% if c.image %}
-            <img src="{{ c.image }}">
+            <img src="{{ c.image | img_url: '2048x' }}">
         {% endif %}
     </a>
     {% endfor %}   

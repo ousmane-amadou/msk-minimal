@@ -3,7 +3,7 @@
   {% paginate collection.products by 6 %}
     {% for product in collection.products %}
     <a href="{{ product.url | within: collection }}" class="item"> 
-      <img src="{{ product.featured_image.src | img_url: 'large' }}" alt="{{ product.featured_image.alt | escape }}">
+      <img src="{{ product.featured_image.src | img_url: '2048x' }}" alt="{{ product.featured_image.alt | escape }}">
       <div class="product-label">
         <p> {{ product.title }} </p>
         <p> {{ product.price | money }} </p>
