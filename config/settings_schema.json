@@ -17,16 +17,8 @@
       {
         "type": "font_picker",
         "id": "hero-text-font",
-        "label": "Font",
+        "label": "Primary Site Font",
         "default": "futura_n5"
-      },
-      {
-        "type": "text",
-        "id": "hero-text",
-        "label": "Hero Text",
-        "default": "ART BY MIKHAIL SK",
-        "info": "Nothing Much",
-        "placeholder": "Enter Text"
       }
     ]
   }
