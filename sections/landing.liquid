@@ -1,9 +1,12 @@
 {% assign names = "fab fa-facebook,fab fa-instagram,fab fa-patreon" | split: "," %}
+<div class="overlay">
+
+</div>
 <img class="landing-logo" src="{{ 'logo.svg' | asset_url }}" alt="logo">
 <div class="slideshow-container">
   {% for block in section.blocks %}
     <div class="slide fade" {{ block.shopify_attributes }}>
-      <img src='{{ block.settings.image | img_url: '2000x'}}'>
+      <img src='{{ block.settings.image | img_url: '2000x2000', crop: 'center'}}'>
     </div>
   {% endfor %}
 </div>
