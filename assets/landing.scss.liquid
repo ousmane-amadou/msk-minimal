@@ -35,13 +35,25 @@ $header-font-style: var(--header-font-style);
 .landing {
     height: inherit;
     position: relative;
-    margin: 1vh 1vw;
     text-align: center;
     text-transform: uppercase;
 
+
     .landing-logo {
-        height: 83px;
-        margin-top: 3vh;
+        @include center("x");
+        height: 85px;
+        margin-top: 6vh;
+    }
+
+    .slideshow-container {
+        .slide {
+            img {
+                left: 0;
+                height: 100vh;
+                position: absolute;
+                z-index: -2;
+            }
+        }
     }
 
     .hero-section {

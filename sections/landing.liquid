@@ -1,18 +1,19 @@
 {% assign names = "fab fa-facebook,fab fa-instagram,fab fa-patreon" | split: "," %}
+<img class="landing-logo" src="{{ 'logo.svg' | asset_url }}" alt="logo">
 <div class="slideshow-container">
   {% for block in section.blocks %}
     <div class="slide fade" {{ block.shopify_attributes }}>
-      <img src="{{ block.settings.image | img_url }}" style="width:100%">
+      <img src='{{ block.settings.image | img_url: '2000x'}}'>
     </div>
   {% endfor %}
 </div>
 
 
-<img class="landing-logo" src="{{ 'logo.svg' | asset_url }}" alt="logo">
 <div class="hero-section"> 
   <p>  {{ section.settings.hero-text }} </p>
   <button onclick="call_to_action()"  class="button">  ENTER </button>
 </div>
+
 <div class="social-media"> 
   <ul>
     {% for name in names %}
@@ -33,6 +34,7 @@
         "settings": [
           {
             "type": "image_picker",
+            "id": "image",
             "label": "Image"
           }
         ] 

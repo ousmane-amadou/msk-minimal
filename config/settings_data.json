@@ -1,7 +1,6 @@
 {
   "current": {
     "hero-text-font": "futura_n5",
-    "hero-text": "ART BY MIKHAIL SK",
     "checkout_header_image": "",
     "checkout_logo_image": "",
     "checkout_logo_position": "left",
@@ -16,6 +15,34 @@
     "checkout_accent_color": "#197bbd",
     "checkout_button_color": "#197bbd",
     "checkout_error_color": "#e32c2b",
+    "hero-text": "Art By Mikhail SK",
+    "sections": {
+      "header": {
+        "type": "header",
+        "settings": {}
+      },
+      "home-menu": {
+        "type": "home-menu",
+        "settings": {}
+      },
+      "landing": {
+        "type": "landing",
+        "blocks": {
+          "1596755664520": {
+            "type": "slidehow_image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/bk1.jpg"
+            }
+          }
+        },
+        "block_order": [
+          "1596755664520"
+        ],
+        "settings": {
+          "hero-text": "Art By Mikhail"
+        }
+      }
+    },
     "content_for_index": []
   },
   "presets": {
