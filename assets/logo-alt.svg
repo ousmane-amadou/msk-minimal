@@ -3,14 +3,10 @@
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 321.6 99.8" style="enable-background:new 0 0 321.6 99.8;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:#FFFFFF;}
-	.st1{clip-path:url(#SVGID_2_);fill:#EE2E2D;}
-	.st2{clip-path:url(#SVGID_4_);fill:#EE2E2D;}
-	.st3{clip-path:url(#SVGID_6_);fill:#EE2E2D;}
+	.st0{clip-path:url(#SVGID_2_);fill:#EE2E2D;}
+	.st1{clip-path:url(#SVGID_4_);fill:#EE2E2D;}
+	.st2{clip-path:url(#SVGID_6_);fill:#EE2E2D;}
 </style>
-<rect x="244" y="21.4" class="st0" width="56" height="56"/>
-<rect x="132.8" y="22.3" class="st0" width="56" height="56"/>
-<rect x="22.2" y="22.2" class="st0" width="56" height="56"/>
 <g id="XMLID_5_">
 	<g>
 		<g>
@@ -20,7 +16,7 @@
 			<clipPath id="SVGID_2_">
 				<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
 			</clipPath>
-			<path class="st1" d="M133.1,22.2h55.4v11.1h-44.4v11.1h44.4v33.3h-55.4V66.5h44.4V55.4h-44.4V22.2z M110.9,99.8h99.8V0h-99.8
+			<path class="st0" d="M133.1,22.2h55.4v11.1h-44.4v11.1h44.4v33.3h-55.4V66.5h44.4V55.4h-44.4V22.2z M110.9,99.8h99.8V0h-99.8
 				C110.9,0,110.9,99.8,110.9,99.8z"/>
 		</g>
 		<g>
@@ -30,7 +26,7 @@
 			<clipPath id="SVGID_4_">
 				<use xlink:href="#SVGID_3_"  style="overflow:visible;"/>
 			</clipPath>
-			<path class="st2" d="M283.3,22.2h16.1l-33.3,28.4l33.3,27h-16.3L255,55.4v22.2h-11V22.2h11v22.2L283.3,22.2z M221.8,99.8h99.8V0
+			<path class="st1" d="M283.3,22.2h16.1l-33.3,28.4l33.3,27h-16.3L255,55.4v22.2h-11V22.2h11v22.2L283.3,22.2z M221.8,99.8h99.8V0
 				h-99.8V99.8z"/>
 		</g>
 		<g>
@@ -40,7 +36,7 @@
 			<clipPath id="SVGID_6_">
 				<use xlink:href="#SVGID_5_"  style="overflow:visible;"/>
 			</clipPath>
-			<path class="st3" d="M22.2,22.2h55.4v55.4H66.5V33.3H55.4v44.4h-11V33.3H33.3v44.4H22.2V22.2z M0,99.8h99.8V0H0V99.8z"/>
+			<path class="st2" d="M22.2,22.2h55.4v55.4H66.5V33.3H55.4v44.4h-11V33.3H33.3v44.4H22.2V22.2z M0,99.8h99.8V0H0V99.8z"/>
 		</g>
 	</g>
 </g>
