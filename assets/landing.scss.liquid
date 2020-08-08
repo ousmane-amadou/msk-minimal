@@ -1,6 +1,4 @@
-@use 'math.max'
-
-;// Landing Page Styles
+// Landing Page Styles
 $header-font-family: var(--header-font-family);
 $header-font-weight: var(--header-font-weight);
 $header-font-style: var(--header-font-style);
@@ -53,7 +51,6 @@ $primary-color: white;
     text-align: center;
     text-transform: uppercase;
 
-
     .landing-logo {
         @include center("x");
         height: 85px;
@@ -61,20 +58,25 @@ $primary-color: white;
     }
 
     .slideshow-container {
-        display: block;
+        
         position: relative;
         height: 100vh;  width: 100vw;
         overflow: hidden;
 
-        img {
-            position: absolute;
-            height: 100%;
-            object-fit: cover;
-            min-height: 100vh;
-            min-width: 100vw;
-            left: 0;
-            z-index: -10;
+        .slide {
+            display: block;
+            
+            img {
+                position: absolute;
+                height: 100%;
+                object-fit: cover;
+                min-height: 100vh;
+                min-width: 100vw;
+                left: 0;
+                z-index: -10;
+            }
         }
+        
     }
 
     .hero-section {

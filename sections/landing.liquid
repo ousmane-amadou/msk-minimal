@@ -5,10 +5,28 @@
 <img class="landing-logo" src="{{ 'logo.svg' | asset_url }}" alt="logo">
 <div class="slideshow-container">
   {% for block in section.blocks %}
-    <div class="slide fade" {{ block.shopify_attributes }}>
+    <div class="slide" {{ block.shopify_attributes }}>
       <img src='{{ block.settings.image | img_url: '2000x'}}'>
     </div>
   {% endfor %}
+  {% javascript %}
+    var slideIndex = 0;
+      function showSlides() {
+        var i;
+        var slides = document.getElementsByClassName("slide");
+        console.log(slides);
+      
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        slideIndex++;
+        console.log(slides);
+        if (slideIndex > slides.length) {slideIndex = 1}
+        slides[slideIndex-1].style.display = "block";
+        setTimeout(showSlides, 5000); // Change image every 5 seconds
+      }
+      showSlides();
+{% endjavascript %}
 </div>
 
 
