@@ -2,13 +2,14 @@
 <div class="collection-container">
   {% paginate collection.products by 6 %}
     {% for product in collection.products %}
-    <a href="{{ product.url | within: collection }}" class="item"> 
+    <div href="{{ product.url | within: collection }}" class="item"> 
       <img src="{{ product.featured_image.src | img_url: '2048x' }}" alt="{{ product.featured_image.alt | escape }}">
       <div class="product-label">
-        <p> {{ product.title }} </p>
-        <p> {{ product.price | money }} </p>
+        <p class="title"> {{ product.title }} </p>
+        <p class="price"> {{ product.price | money }} </p>
+        <button> Add To Cart </button>
       </div>
-    </a>
+    </div>
     {% endfor %}
   {% endpaginate %}
 </div>

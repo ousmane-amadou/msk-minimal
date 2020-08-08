@@ -2,11 +2,11 @@
 <div class="overlay">
 
 </div>
-<img class="landing-logo" src="{{ 'logo-alt.svg' | asset_url }}" alt="logo">
+<img class="landing-logo" src="{{ 'logo.svg' | asset_url }}" alt="logo">
 <div class="slideshow-container">
   {% for block in section.blocks %}
     <div class="slide fade" {{ block.shopify_attributes }}>
-      <img src='{{ block.settings.image | img_url: '2000x2000', crop: 'center'}}'>
+      <img src='{{ block.settings.image | img_url: '2000x'}}'>
     </div>
   {% endfor %}
 </div>
@@ -33,7 +33,7 @@
       {
         "type": "slidehow_image",
         "name": "Slideshow Image",
-        "limit": 5,
+        "limit": 8,
         "settings": [
           {
             "type": "image_picker",

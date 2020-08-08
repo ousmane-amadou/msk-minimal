@@ -5,7 +5,6 @@ $h-header-padding: 16px;
     display: none;
 }
 
-
 html, body, main {
     height: 100%;
     margin: 0;
@@ -41,38 +40,60 @@ html, body, main {
 .collection-container {
     display: flex;
     flex-wrap: wrap;
-    padding-top: calc(#{$header-height} +  2  * #{$h-header-padding});
+    overflow: hidden;
 
     .item {
         display: block;
         min-width: 300px;
+        overflow: hidden;
+        
         width: 50%;
-
+        text-decoration: none;
+        margin-bottom: -25px;
+        
         .product-label {
+            display: block;
             position: relative;
-            padding: 20px 0px;
-            
-            p {
-                display: inline;
+            left: 15px;
+            top: -100px;
+            color: white;
+            max-height: 50vw;
+
+            * {
+                position: absolute;
+                display: block;
+            }
+
+            .title {
+                top: -10px;
+                left: 25px;
+            }
+
+            .price {
+                top: 15px;
+                left: 25px;
+            }
+
+            button  {
+                top: 30px;
+                right: 60px;
             }
         }
 
         img {
             width: 100%;
-            
         }
-
-        img:hover {
-            opacity: 0.5;
-        }
-        
     }
+}
+
+.cart-container {
+    padding-left: 75px;
+    padding-top: calc(#{$header-height} +  1  * #{$h-header-padding} + 50px);
 }
 
 .home {
     margin: 0;
     padding: 0;
-    padding-top: calc(#{$header-height} +  1  * #{$h-header-padding});
     flex-direction: column;
     overflow: hidden;
 
@@ -93,7 +114,6 @@ html, body, main {
         text-decoration: none;
         text-transform: uppercase;
         overflow-y: hidden;
-        
 
         img {
             height: calc(#{$header-height} + 30vw);

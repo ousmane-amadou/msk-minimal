@@ -1,12 +1,15 @@
+{% section 'header' %}
+
 {% if cart.item_count > 0 %}
-  <h1>cart</h1>
+<div class="cart-container">
+  <h1> Shopping Cart </h1>
   <form action="/cart" method="post" novalidate>
     <table>
       <thead>
-        <th colspan="2">Prod</th>
-        <th>Price</th>
-        <th>Qty</th>
-        <th>total</th>
+        <th colspan="2">Product </th>
+        <th> Price </th>
+        <th> Quantity </th>
+        <th> Total </th>
       </thead>
       <tbody>
         {% for item in cart.items %}
@@ -40,7 +43,9 @@
       <button type="submit" name="checkout">Checkout</button>
     </div>
   </form>
+</div>
 {% else %}
-  <h2>cart</h2>
+  <h2> Shopping Cart </h2>
   Cart is empty
+  <button> Continue Shopping </button>
 {% endif %}
