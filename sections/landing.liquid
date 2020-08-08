@@ -5,7 +5,7 @@
 <img class="landing-logo" src="{{ 'logo.svg' | asset_url }}" alt="logo">
 <div class="slideshow-container">
   {% for block in section.blocks %}
-    <div class="slide" {{ block.shopify_attributes }}>
+    <div class="slide fade" {{ block.shopify_attributes }}>
       <img src='{{ block.settings.image | img_url: '2000x'}}'>
     </div>
   {% endfor %}
