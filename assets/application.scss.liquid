@@ -41,23 +41,31 @@ html, body, main {
     display: flex;
     flex-wrap: wrap;
     overflow: hidden;
+    z-index: 0;
+    
+    img {
+        width: 100%;
+        z-index: -5;
+    }
 
     .item {
         display: block;
-        min-width: 300px;
-        overflow: hidden;
+        position: relative;
         
         width: 50%;
+        min-width: 300px;
+        max-height: 50vh;
+        overflow: hidden;
         text-decoration: none;
-        margin-bottom: -25px;
-        
+
         .product-label {
             display: block;
-            position: relative;
+            position: absolute;
             left: 15px;
-            top: -100px;
+            bottom: -5px;
+            height: 75px;
             color: white;
-            max-height: 50vw;
+            width: 100%;
 
             * {
                 position: absolute;
@@ -74,12 +82,9 @@ html, body, main {
                 left: 25px;
             }
 
-            button  {
+            #button1  {
                 top: 30px;
                 right: 60px;
-            }
-
-            .button {
                 line-height: 1em;
                 letter-spacing: .2em;
                 background-color: transparent;
@@ -88,16 +93,13 @@ html, body, main {
                 border: 2px solid white; 
                 padding: 1em 1.44em 1em 1.44em;
                 margin-top: -25px;
+                z-index: 50;
             }
 
-            .button:hover {
-                background-color: white;
-                color: black;
+            #button1:hover {
+                background-color: red;
+                z-index: 50;
             }
-        }
-
-        img {
-            width: 100%;
         }
     }
 }
@@ -106,11 +108,27 @@ html, body, main {
     padding: 50px 30px;
     padding-top: calc(#{$header-height} +  2  * #{$h-header-padding});
 
-    label, input, textarea {
-        width: 100%;
-        padding: 5px 0px;
-        margin: 10px 5px;
+    input, textarea {
         display: block;
+        width: 95%;
+        padding: 10px 10px;
+        margin: 10px 5px;
+    }
+    .button2 {
+        line-height: 1em;
+        letter-spacing: .2em;
+        background-color: red;
+        color: white;
+        border: 2px solid red;
+        text-decoration: none; 
+        border: none;
+        padding: 1em 1.44em 1em 1.44em;
+        margin-top: -25px;
+    }
+    .button2:hover {
+        background-color: white;
+        color: red;
+        border: 2px solid red;
     }
 }
 .cart-container {
@@ -124,11 +142,13 @@ html, body, main {
         height: 70%;
     }
 
+
     .default-cart {
         table {
             text-align: right;
             width: 100%;
         }
+
         .checkout-text {
             text-align: right;
             width: 100%;

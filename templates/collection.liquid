@@ -3,12 +3,12 @@
   {% paginate collection.products by 6 %}
     {% for product in collection.products %}
     <div href="{{ product.url | within: collection }}" class="item"> 
-      <img src="{{ product.featured_image.src | img_url: '2048x' }}" alt="{{ product.featured_image.alt | escape }}">
       <div class="product-label">
         <p class="title"> {{ product.title }} </p>
         <p class="price"> {{ product.price | money }} </p>
-        <button class="button"> Add To Cart </button>
+        <button id="button1"> Add To Cart </button>
       </div>
+      <img src="{{ product.featured_image.src | img_url: '2048x' }}" alt="{{ product.featured_image.alt | escape }}">
     </div>
     {% endfor %}
   {% endpaginate %}
