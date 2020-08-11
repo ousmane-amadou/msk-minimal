@@ -14,6 +14,9 @@
     <div id="{{ product.id }}" class="modal">
       <div class="modal-content">
         <a onclick={{ product.id | prepend: 'closeModal(' | append: ')' }}><span class="close">&times;</span></a>
+        {% for p_img in product.images %}
+            <img src="{{ p_img | img_url: '2048x' }}">
+        {% endfor %}
       </div>
     </div>
     {% endfor %}

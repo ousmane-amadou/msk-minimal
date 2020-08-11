@@ -15,7 +15,7 @@ html, body, main {
     padding-top: calc(#{$header-height} +  2  * #{$h-header-padding});
     display: flex;
     flex-wrap: wrap;
-
+    
     .item {
         display: block;
         padding-top: 50px;
@@ -51,7 +51,7 @@ html, body, main {
     .modal {
         display: none; /* Hidden by default */
         position: fixed; /* Stay in place */
-        z-index: 5; /* Sit on top */
+        z-index: 10; /* Sit on top */
         left: 0;
         top: 0;
         width: 100vw; /* Full width */
@@ -64,17 +64,24 @@ html, body, main {
         .modal-content {
             background-color: #fefefe;
             margin: 2.5% auto; /* 15% from the top and centered */
-            padding: 20px;
+            padding: 0px;
             border: 1px solid #888;
-            height: 75%;
+            height: 80%;
             width: 80%; /* Could be more or less, depending on screen size */
+            overflow: hidden;
         }
 
+        img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
         /* The Close Button */
         .close {
             color: #aaa;
             float: right;
             font-size: 28px;
+            margin-right: 10px;
             font-weight: bold;
         }
         
@@ -89,7 +96,6 @@ html, body, main {
     .item {
         display: block;
         position: relative;
-        
         width: 50%;
         min-width: 300px;
         max-height: 50vh;
@@ -131,12 +137,11 @@ html, body, main {
                 border: 2px solid white; 
                 padding: 1em 1.44em 1em 1.44em;
                 margin-top: -25px;
-                z-index: 50;
+                z-index: 5;
             }
 
             #button1:hover {
                 background-color: red;
-                z-index: 50;
             }
         }
     }
