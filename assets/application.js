@@ -40,12 +40,54 @@ function closeDrawer() {
 function openModal(id) {
     var modal = document.getElementById(id);
     modal.style.display = "block";
-    console.log("clicked");
+
+    var modal_content = document.getElementById(id).children[0].children;
+
+    for (var modal_element = 0; modal_element < modal_content.length ; modal_element++) {
+        if(modal_content[modal_element].className.indexOf('product-slide') != -1) {
+            modal_content[modal_element].className = 'product-slide active-slide'
+        }
+    }
+
 } 
 
 function closeModal(id) {
     var modal = document.getElementById(id);
     modal.style.display = "none";
+    var curr_slide = document.getElementsByClassName('active-slide')[0];
+    curr_slide.className = 'product-slide'
+}
+
+function changeSlide(next, product_id) {
+    var modal_content = document.getElementById(product_id).children[0].children;
+    var slides = [];
+
+    for(var i = 0; i < modal_content.length; i++) {
+        if (modal_content[i].className.indexOf('product-slide') != -1) {
+            slides.push(modal_content[i])
+        }
+    }
+
+    // Get Slide Index
+    var curr_slide = document.getElementsByClassName('active-slide')[0];
+    var slideIndex = Number(curr_slide.id);
+
+    if (next) {
+        slideIndex++;
+    } else {
+        slideIndex--;
+    }
+
+    // Wrap Around Logic
+    if (slideIndex >= slides.length) {slideIndex = 0}
+    if (slideIndex < 0 ) { slideIndex = slides.length-1}
+
+    // 
+    for (var i = 0; i < slides.length; i++) {
+        slides[i].className = 'product-slide'
+    }
+
+    slides[slideIndex].className = 'product-slide active-slide';
 }
 
 // // When the user clicks anywhere outside of the modal, close it
