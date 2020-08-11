@@ -6,14 +6,19 @@
       <div class="product-label">
         <p class="title"> {{ product.title }} </p>
         <p class="price"> {{ product.price | money }} </p>
-        <button id="button1"> Add To Cart </button>
+        <button onclick={{ product.id | prepend: 'openModal(' | append: ')' }} id="button1"> Add To Cart </button>
       </div>
       <img src="{{ product.featured_image.src | img_url: '2048x' }}" alt="{{ product.featured_image.alt | escape }}">
     </div>
+    
+    <div id="{{ product.id }}" class="modal">
+      <div class="modal-content">
+        <a onclick={{ product.id | prepend: 'closeModal(' | append: ')' }}><span class="close">&times;</span></a>
+      </div>
+    </div>
     {% endfor %}
-  {% endpaginate %}
+  {% endpaginate %} 
 </div>
-
 <!-- {% paginate collection.products by 2 %}
   <h1>{{ collection.title }}</h1>
   {% for product in collection.products %}

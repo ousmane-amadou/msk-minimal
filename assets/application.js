@@ -37,4 +37,22 @@ function closeDrawer() {
     side_nav.style.width = "0vw";
 }
 
+function openModal(id) {
+    var modal = document.getElementById(id);
+    modal.style.display = "block";
+    console.log("clicked");
+} 
+
+function closeModal(id) {
+    var modal = document.getElementById(id);
+    modal.style.display = "none";
+}
+
+// // When the user clicks anywhere outside of the modal, close it
+// window.onclick = function(event) {
+//     var modal = document.getElementById(id);
+//   if (event.target == modal) {
+//     modal.style.display = "none";
+//   }
+// }
 
