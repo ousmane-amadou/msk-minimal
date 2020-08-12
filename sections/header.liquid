@@ -9,7 +9,7 @@
         <ul>
             <!-- MAIN MENU ITEMS -->
             <li class="menu-icon"> <a onclick="openDrawer()"> <i class="fa fa-bars"></i></a></li>
-            {% for link in linklists.main-menu.links %}
+            {% for link in linklists.more-menu.links %}
             <li class="main-menu-item"><a href="{{ link.url }}">{{ link.title | escape }}</a></li>
             {% endfor %}
             <!-- SECONDARY MENU ITEMS -->
@@ -22,7 +22,7 @@
     <nav class="side-nav">
         <i onclick="closeDrawer()" class="fas fa-times"></i>
         <ul>
-            {% for link in linklists.main-menu.links %}
+            {% for link in linklists.more-menu.links %}
             <li><a href="{{ link.url }}">{{ link.title | escape }}</a></li>
             {% endfor %}
         </ul>

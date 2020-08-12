@@ -19,6 +19,12 @@
         "id": "hero-text-font",
         "label": "Primary Site Font",
         "default": "futura_n5"
+      },
+      {
+        "type": "font_picker",
+        "id": "secondary-text-font",
+        "label": "Secondary Site Font",
+        "default": "futura_n5"
       }
     ]
   }

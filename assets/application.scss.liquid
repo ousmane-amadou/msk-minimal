@@ -1,6 +1,14 @@
 $header-height: 50px;
 $h-header-padding: 16px;
 
+$header-font-family: var(--header-font-family);
+$header-font-weight: var(--header-font-weight);
+$header-font-style: var(--header-font-style);
+
+$secondary-font-family: var(--secondary-font-family);
+$secondary-font-weight: var(--secondary-font-weight);
+$secondary-font-style: var(--secondary-font-style);
+
 .inactive {
     display: none;
 }
@@ -139,6 +147,13 @@ html, body, main {
         }
     }
 
+    .item:hover {
+        background-color: black;
+        img {
+            opacity: 0.5;
+        }
+    }
+    
     .item {
         display: block;
         position: relative;
@@ -157,24 +172,39 @@ html, body, main {
             color: white;
             width: 100%;
 
+            font-family: $secondary-font-family;
+            font-weight: $secondary-font-weight; 
+            font-style: $secondary-font-style;
+
             * {
                 position: absolute;
                 display: block;
             }
 
             .title {
-                top: -10px;
+                top: -45px;
+                z-index: 5;
                 left: 25px;
             }
 
-            .price {
-                top: 15px;
-                left: 25px;
+            form {
+                z-index: 5;
+                input {
+                    top: 30px;
+                    left: calc(25vw + 7vh);
+                }
+
+                select {
+                    top: 0px;
+                    left: 25px;
+                    background-color: transparent;
+                    color: white;
+                    border: 2px solid white; 
+                    padding: 1em;
+                }
             }
 
-            #button1  {
-                top: 30px;
-                right: 60px;
+            #button1  {    
                 line-height: 1em;
                 letter-spacing: .2em;
                 background-color: transparent;
@@ -194,7 +224,7 @@ html, body, main {
 }
 
 .contact-container {
-    padding: 30px 15% ;
+    padding: 30px 15%;
     padding-top: calc(#{$header-height} +  2  * #{$h-header-padding});
 
     input, textarea {
@@ -203,6 +233,7 @@ html, body, main {
         padding: 10px 10px;
         margin: 10px 5px;
     }
+
     .button2 {
         line-height: 1em;
         letter-spacing: .2em;
@@ -214,6 +245,7 @@ html, body, main {
         padding: 1em 1.44em 1em 1.44em;
         margin-top: -25px;
     }
+
     .button2:hover {
         background-color: white;
         color: red;
@@ -224,6 +256,7 @@ html, body, main {
     padding: 50px 30px;
     padding-top: calc(#{$header-height} +  2  * #{$h-header-padding});
 
+    
     .empty-cart {
         margin-top: calc(5% + 50px);
         text-align: center;
@@ -253,6 +286,8 @@ html, body, main {
 
     .title {
         font-size: 24px;
+        font-family: $header-font-family;
+        color:red;
         line-height: 2em;
         letter-spacing: .3em;
     }

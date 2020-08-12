@@ -5,10 +5,32 @@
     <div href="{{ product.url | within: collection }}" class="item"> 
       <div class="product-label">
         <p class="title"> {{ product.title }} </p>
-        <p class="price"> {{ product.price | money }} </p>
-        <button onclick={{ product.id | prepend: 'openModal(' | append: ')' }} id="button1"> Add To Cart </button>
+        <!--   -->
+        <form method="post" action="/cart/add">
+          <!-- <input name="id" value="{{ product.variants.first.id }}" type="hidden" /> -->
+          <select name="id" id="productSelect">
+            {% for variant in product.variants %}
+              {% if variant.available %}
+                <option value="{{ variant.id }}">
+                  {{ variant.title }} - {{ variant.price | money_with_currency }}
+                </option>
+              {% else %}
+                <option disabled="disabled">
+                  {{ variant.title }} - sold out
+                </option>
+              {% endif %}
+            {% endfor %}
+          </select>
+          <input type="submit" value="Add to cart" id="button1" />  
+          <!-- <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
+          <input min="1" type="number" id="quantity" name="quantity" value="1"/>
+          <input type="submit" value="Add to cart" class="btn" /> -->
+        </form> 
+        
       </div>
-      <img src="{{ product.featured_image.src | img_url: '2048x' }}" alt="{{ product.featured_image.alt | escape }}">
+      <a onclick={{ product.id | prepend: 'openModal(' | append: ')' }}>
+        <img src="{{ product.featured_image.src | img_url: '2048x' }}" alt="{{ product.featured_image.alt | escape }}">
+      </a> 
     </div>
     
     <div id="{{ product.id }}" class="modal">

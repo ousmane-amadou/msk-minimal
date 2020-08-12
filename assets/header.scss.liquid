@@ -1,4 +1,7 @@
 $header-height: 50px;
+$header-font-family: var(--header-font-family);
+$header-font-weight: var(--header-font-weight);
+$header-font-style: var(--header-font-style);
 $h-header-padding: 8px;
 
 @mixin center($axis: "both") {
@@ -62,12 +65,14 @@ header {
             
             .menu-icon {
                 display: none;
+                color: red;
             }
 
             li:not(.menu-icon) {
                 display: inline;
 
                 a {
+                    font-family: $header-font-family;
                     text-decoration: none;
                     color: red;
                 }
@@ -119,7 +124,7 @@ header {
 
             i {
                 position: absolute;
-                color: black;
+                color: red;
                 font-size: 30px;
                 right: 25px;
                 top: 25px;
