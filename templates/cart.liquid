@@ -4,11 +4,11 @@
   <div class="default-cart">
     <h1> Shopping Cart </h1>
     <a href="/home"> &larr; Continue Shopping </a>
-    <hr>
+    
     <form action="/cart" method="post" novalidate>
       <table>
         <thead>
-          <th colspan="2">Product </th>
+          <th colspan="2">  </th>
           <th> Price </th>
           <th> Quantity </th>
           <th> Total </th>
@@ -23,8 +23,8 @@
               </td>
               <td>
                 <a href="{{ item.url }}">{{ item.product.title }}</a>
-                {{ item.variant.title }}
-                <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0">remove</a>
+                ({{ item.variant.title }})
+                <!-- <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0">remove</a> -->
               </td>
               <td>{{ item.price | money }}</td>
               <td>

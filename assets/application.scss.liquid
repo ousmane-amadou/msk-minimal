@@ -70,10 +70,10 @@ html, body, main {
 
         /* Modal Content/Box */
         .modal-content {
-            background-color: #fefefe;
+            background-color: none;
             margin: 2.5% auto; /* 15% from the top and centered */
             padding: 0px;
-            border: 1px solid #888;
+            // border: 1px solid #888;
             height: 80%;
             width: 80%; /* Could be more or less, depending on screen size */
             overflow: hidden;
@@ -130,6 +130,7 @@ html, body, main {
             width: 100%;
             text-align: center;
         }
+
         /* The Close Button */
         .close {
             color: #aaa;
@@ -159,7 +160,7 @@ html, body, main {
         position: relative;
         width: 50%;
         min-width: 300px;
-        max-height: 50vh;
+        max-height: 40vh;
         overflow: hidden;
         text-decoration: none;
 
@@ -253,7 +254,23 @@ html, body, main {
 .cart-container {
     padding: 50px 30px;
     padding-top: calc(#{$header-height} +  2  * #{$h-header-padding});
-
+    font-family: $secondary-font-family;
+    font-weight: $secondary-font-weight; 
+    font-style: $secondary-font-style;
+    
+    a {
+        text-decoration: none;
+    }
+    button {
+        line-height: 1em;
+        letter-spacing: .2em;
+        background-color: red;
+        color: white;
+        text-decoration: none; 
+        border: none;
+        padding: 1em 1.44em 1em 1.44em;
+        margin-top: -25px;
+    }
     
     .empty-cart {
         margin-top: calc(5% + 50px);
