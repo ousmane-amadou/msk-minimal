@@ -150,7 +150,7 @@ html, body, main {
     .item:hover {
         background-color: black;
         img {
-            opacity: 0.5;
+            opacity: 0.75;
         }
     }
     
@@ -166,11 +166,11 @@ html, body, main {
         .product-label {
             display: block;
             position: absolute;
-            left: 15px;
+            left: 20px;
             bottom: -5px;
             height: 75px;
             color: white;
-            width: 100%;
+            width: 90%;
 
             font-family: $secondary-font-family;
             font-weight: $secondary-font-weight; 
@@ -184,19 +184,17 @@ html, body, main {
             .title {
                 top: -45px;
                 z-index: 5;
-                left: 25px;
             }
 
             form {
                 z-index: 5;
+            
                 input {
                     top: 30px;
-                    left: calc(25vw + 7vh);
                 }
 
                 select {
                     top: 0px;
-                    left: 25px;
                     background-color: transparent;
                     color: white;
                     border: 2px solid white; 
@@ -229,6 +227,7 @@ html, body, main {
 
     input, textarea {
         display: block;
+        font-family: $secondary-font-family;
         width: 95%;
         padding: 10px 10px;
         margin: 10px 5px;
@@ -239,7 +238,6 @@ html, body, main {
         letter-spacing: .2em;
         background-color: red;
         color: white;
-        border: 2px solid red;
         text-decoration: none; 
         border: none;
         padding: 1em 1.44em 1em 1.44em;
@@ -249,9 +247,9 @@ html, body, main {
     .button2:hover {
         background-color: white;
         color: red;
-        border: 2px solid red;
     }
 }
+
 .cart-container {
     padding: 50px 30px;
     padding-top: calc(#{$header-height} +  2  * #{$h-header-padding});
@@ -325,5 +323,31 @@ html, body, main {
             width: 100%;            
         }
     }
+
+    form {
+        z-index: 5;
+    
+        input {
+            top: 30px;
+            left: calc(65vw + 10px) !important;
+        }
+    }
 }
 
+@media screen and (min-width: 720px) {
+    form {
+        input {
+            top: 30px;
+            left: calc(30vw + 5px) !important;
+        }
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    form {
+        input {
+            top: 30px;
+            left: calc(32vw + 20px) !important;
+        }
+    }
+}
