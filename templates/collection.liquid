@@ -35,25 +35,44 @@
     
     <div id="{{ product.id }}" class="modal">
       <div class="modal-content">
-        <a onclick={{ product.id | prepend: 'closeModal(' | append: ')' }}><span class="close">&times;</span></a>
-  
+        
         {% assign slide_id = 0 %}
         {% for p_img in product.images %}
           {% if slide_id == 0 %}
             <div id="{{ slide_id }}" class="product-slide">
               <img src="{{ p_img | img_url: '2048x' }}">
-              <div class="text">Caption Text</div>
+              <!-- <div class="text"> Caption Text</div> -->
             </div>
           {% else %}
             <div id="{{ slide_id }}" class="product-slide">
               <img src="{{ p_img | img_url: '2048x' }}">
-              <div class="text">Caption Text</div>
+              <!-- <div class="text"> Caption Text </div> -->
             </div>
           {% endif %}
           {% assign slide_id = slide_id  | plus: 1 %}
         {% endfor %}
         
-        
+        <!-- <form method="post" action="/cart/add">
+           <input name="id" value="{{ product.variants.first.id }}" type="hidden" />
+          <select name="id" id="productSelect">
+            {% for variant in product.variants %}
+              {% if variant.available %}
+                <option value="{{ variant.id }}">
+                  {{ variant.title }} - {{ variant.price | money_with_currency }}
+                </option>
+              {% else %}
+                <option disabled="disabled">
+                  {{ variant.title }} - sold out
+                </option>
+              {% endif %}
+            {% endfor %}
+          </select>
+          <input type="submit" value="Add to cart" id="button1" />  
+          <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
+          <input min="1" type="number" id="quantity" name="quantity" value="1"/>
+          <input type="submit" value="Add to cart" class="btn" />
+        </form>  -->
+        <a onclick={{ product.id | prepend: 'closeModal(' | append: ')' }}><span class="close">&times;</span></a>
         <a class="prev" onclick={{ product.id | prepend:  'changeSlide(0,' | append: ')' }}>&#10094;</a>
         <a class="next" onclick={{ product.id | prepend:  'changeSlide(1,' | append: ')' }}>&#10095;</a>
       </div>

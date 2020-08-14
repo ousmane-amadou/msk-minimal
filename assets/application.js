@@ -46,6 +46,7 @@ function openModal(id) {
     for (var modal_element = 0; modal_element < modal_content.length ; modal_element++) {
         if(modal_content[modal_element].className.indexOf('product-slide') != -1) {
             modal_content[modal_element].className = 'product-slide active-slide'
+            break;
         }
     }
 
